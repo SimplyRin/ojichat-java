@@ -10,12 +10,12 @@ class GeneratorTest {
 
     @Test
     void testStart() throws Exception {
-        Config config = new Config();
+        OjichatConfig config = new OjichatConfig();
         config.setTargetName("テスト");
         config.setEmojiNum(4);
         config.setPunctuationLevel(0);
 
-        String result = Generator.start(config);
+        String result = OjichatGenerator.start(config);
         assertNotNull(result);
         assertFalse(result.isEmpty());
         assertTrue(result.contains("テスト"));
@@ -23,37 +23,37 @@ class GeneratorTest {
 
     @Test
     void testStartWithEmptyName() throws Exception {
-        Config config = new Config();
+        OjichatConfig config = new OjichatConfig();
         config.setTargetName("");
         config.setEmojiNum(4);
         config.setPunctuationLevel(0);
 
-        String result = Generator.start(config);
+        String result = OjichatGenerator.start(config);
         assertNotNull(result);
         assertFalse(result.isEmpty());
     }
 
     @Test
     void testStartWithPunctuation() throws Exception {
-        Config config = new Config();
+        OjichatConfig config = new OjichatConfig();
         config.setTargetName("テスト");
         config.setEmojiNum(4);
         config.setPunctuationLevel(3);
 
-        String result = Generator.start(config);
+        String result = OjichatGenerator.start(config);
         assertNotNull(result);
         assertFalse(result.isEmpty());
     }
 
     @Test
     void testInvalidPunctuationLevel() {
-        Config config = new Config();
+        OjichatConfig config = new OjichatConfig();
         config.setTargetName("テスト");
         config.setEmojiNum(4);
         config.setPunctuationLevel(5); // invalid
 
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            Generator.start(config);
+            OjichatGenerator.start(config);
         });
         assertTrue(exception.getMessage().contains("句読点挿入頻度レベルが不正"));
     }

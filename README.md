@@ -1,7 +1,7 @@
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/wiki/greymd/ojichat/img/ojichat_logo.png" height="178" width="485" />
    <h4 align="center">
-     Ojisan Nanchatte (ojichat) Generator re-written in Java
+     Ojisan Nanchatte (ojichat) Generator
      <br>
      このリポジトリは <a href="https://github.com/greymd/ojichat">greymd/ojichat</a> のフォークです。
    </h4>
@@ -27,7 +27,7 @@ openjdk version "17.0.16" 2025-07-15
 
 ## インストール
 
-実行には Java 17 の実行環境が必要です。
+実行には Java 17 環境が必要です。
 
 ### JARファイルのダウンロード
 GitHub Releases から最新の JAR ファイルをダウンロードしてください。
@@ -35,6 +35,28 @@ GitHub Releases から最新の JAR ファイルをダウンロードしてく�
 ```bash
 # 例: 最新版をダウンロード
 wget https://github.com/SimplyRin/ojichat/releases/latest/download/Ojichat-1.0-jar-with-dependencies.jar
+```
+
+## Mavenリポジトリでの利用
+
+このライブラリは Maven リポジトリからも利用できます。
+
+### 依存関係の追加方法
+
+`pom.xml` に以下を追加してください
+
+```xml
+<repository>
+  <id>net.simplyrin</id>
+  <name>api</name>
+  <url>https://api.simplyrin.net/maven/</url>
+</repository>
+
+<dependency>
+  <groupId>net.simplyrin.ojichat</groupId>
+  <artifactId>Ojichat</artifactId>
+  <version>0.0.2</version>
+</dependency>
 ```
 
 ## 使い方

@@ -2,8 +2,8 @@ package net.simplyrin.ojichat;
 
 import java.util.concurrent.Callable;
 
-import net.simplyrin.ojichat.generator.Config;
-import net.simplyrin.ojichat.generator.Generator;
+import net.simplyrin.ojichat.generator.OjichatConfig;
+import net.simplyrin.ojichat.generator.OjichatGenerator;
 import picocli.CommandLine;
 
 /**
@@ -56,12 +56,12 @@ public class Ojichat implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        Config config = new Config();
+        OjichatConfig config = new OjichatConfig();
         config.setTargetName(name);
         config.setEmojiNum(emoji);
         config.setPunctuationLevel(punctuation);
 
-        String result = Generator.start(config);
+        String result = OjichatGenerator.start(config);
         System.out.println(result);
         return 0;
     }

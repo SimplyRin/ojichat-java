@@ -39,7 +39,7 @@ import net.simplyrin.ojichat.pattern.Tags;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-public class Generator {
+public class OjichatGenerator {
 
     private static final Random random = new Random();
 
@@ -74,7 +74,7 @@ public class Generator {
     /**
      * おじさんの文言を生成
      */
-    public static String start(Config config) throws Exception {
+    public static String start(OjichatConfig config) throws Exception {
         // メッセージを選択する
         String selectedMessage = selectMessage();
 
