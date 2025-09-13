@@ -26,7 +26,7 @@ import lombok.Data;
  * SOFTWARE.
  */
 @Data
-public class Config {
+public class OjichatConfig {
     private String targetName;
     private int emojiNum;
     private int punctuationLevel;
