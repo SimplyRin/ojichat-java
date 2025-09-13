@@ -5,7 +5,7 @@
 
     <groupId>net.simplyrin.ojichat</groupId>
     <artifactId>Ojichat</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
 
     <name>ojichat</name>
